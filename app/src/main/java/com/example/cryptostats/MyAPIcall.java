@@ -14,9 +14,13 @@ public interface MyAPIcall {
     //https://jsonplaceholder.typicode.com        todos/1
 
 
-    @GET("YOUR_API_KEY")
+    @GET("YOUR_URL")
 //    Call<String> STRING_CALL();
     Call<List<DataModel>> getData(@Query("page") int page);
+
+
+
+
 
 
 //
