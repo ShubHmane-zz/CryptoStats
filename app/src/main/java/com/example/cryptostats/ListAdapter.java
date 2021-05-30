@@ -3,7 +3,6 @@ package com.example.cryptostats;
 
 import android.content.Context;
 import android.graphics.drawable.PictureDrawable;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,33 +10,26 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.model.StreamEncoder;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYouListener;
-import com.github.twocoffeesoneteam.glidetovectoryou.SvgDecoder;
-import com.github.twocoffeesoneteam.glidetovectoryou.SvgDrawableTranscoder;
-import com.github.twocoffeesoneteam.glidetovectoryou.SvgSoftwareLayerSetter;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implements Filterable {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> implements Filterable {
 
     LayoutInflater mInflater;
     Context context;
     List<DataModel> dm;
     List<DataModel> dmfilter;
 
-    public Adapter(Context context, List<DataModel> dm) {
+    public ListAdapter(Context context, List<DataModel> dm) {
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
         this.dm = dm;

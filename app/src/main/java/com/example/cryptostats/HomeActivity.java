@@ -1,11 +1,13 @@
 package com.example.cryptostats;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -23,12 +25,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class MainActivity<pagecount> extends AppCompatActivity {
+public class HomeActivity<pagecount> extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<DataModel> datalist;
-    Adapter adapter;
-    Context c;
+    ListAdapter listAdapter;
     SwipeRefreshLayout swipeRefreshLayout;
     NestedScrollView nestedScrollView;
     ProgressBar progressBar;
@@ -42,13 +43,23 @@ class MainActivity<pagecount> extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
+        Button button = findViewById(R.id.button);
 
-        progressBar = findViewById(R.id.progress_bar);
-        nestedScrollView = findViewById(R.id.nested);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewsActivity();
+            }
+        });
+
+
+
+        progressBar = findViewById(R.id.progress_bar1);
+        nestedScrollView = findViewById(R.id.nested1);
 
         progressBar.setVisibility(View.GONE);
         datalist = new ArrayList<>();
-        recyclerView = findViewById(R.id.rv);
+        recyclerView = findViewById(R.id.recyclerview1);
         RecyclerView.ItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(divider);
 
@@ -57,6 +68,17 @@ class MainActivity<pagecount> extends AppCompatActivity {
         setUpPagination(true);
         swiperefresh();
 
+
+    }
+
+
+
+
+
+    private void openNewsActivity() {
+
+        Intent intent = new Intent(this,NewsActivity.class);
+        startActivity(intent);
 
     }
 
@@ -83,9 +105,9 @@ class MainActivity<pagecount> extends AppCompatActivity {
 
 
     private void initrecyclerview() {
-        adapter = new Adapter(getApplicationContext(), datalist);
+        listAdapter = new ListAdapter(getApplicationContext(), datalist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(listAdapter);
     }
 
 
@@ -100,12 +122,12 @@ class MainActivity<pagecount> extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                adapter.getFilter().filter(query);
+                listAdapter.getFilter().filter(query);
                 return false;
             }
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                listAdapter.getFilter().filter(newText);
                 return false;
             }
         });
@@ -152,7 +174,7 @@ class MainActivity<pagecount> extends AppCompatActivity {
 
 
     private void swiperefresh(){
-        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh1);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -161,7 +183,7 @@ class MainActivity<pagecount> extends AppCompatActivity {
                 Log.d("TAG","Datalist Cleared!!");
                 getData1(1);
                 Log.d("TAG","getData1() executed!!!");
-                adapter.notifyDataSetChanged();
+                listAdapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
 
                 page = 1;
