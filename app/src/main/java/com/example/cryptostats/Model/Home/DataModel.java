@@ -1,4 +1,4 @@
-package com.example.cryptostats;
+package com.example.cryptostats.Model.Home;
 
 public class DataModel {
 

@@ -1,4 +1,4 @@
-package com.example.cryptostats;
+package com.example.cryptostats.Adapters;
 
 
 import android.content.Context;
@@ -13,14 +13,18 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.cryptostats.Model.Home.DataModel;
+import com.example.cryptostats.R;
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> implements Filterable {
 
@@ -125,7 +129,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
 
     public  static  class MyViewHolder extends RecyclerView.ViewHolder{
-
         TextView currency;
         ImageView logo_url;
         TextView name;
