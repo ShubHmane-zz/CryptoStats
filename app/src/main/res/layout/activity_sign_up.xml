@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signuppass"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Authentication.SigninActivity">
+
+    <EditText
+
+        android:background="@drawable/custom_input"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/custom_email_icon"
+        android:id="@+id/signupemail"
+        android:layout_width="274dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneev" />
+
+    <TextView
+        android:id="@+id/signuptv"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="SignUp"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:background="@drawable/custom_input"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:drawableStart="@drawable/custom_pass_icon"
+        android:drawablePadding="12dp"
+        android:id="@+id/Signuppass"
+        android:layout_width="274dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupemail" />
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#007EFA"
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp"
+        tools:text="Sign Up"
+        android:textColor="#FFFFFF"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Signuppass" />
+
+    <EditText
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:drawablePadding="12dp"
+        android:id="@+id/personev"
+        android:layout_width="274dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:drawableStart="@drawable/custom_user_icon"
+        android:inputType="textPersonName"
+        tools:text="Name"
+        android:textColor="@android:color/tertiary_text_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signuptv" />
+
+    <EditText
+
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
+        android:id="@+id/phoneev"
+        android:layout_width="274dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:drawableStart="@drawable/custom_phone_icon"
+        android:inputType="textPersonName"
+        tools:text="Phone"
+        android:textColor="@android:color/tertiary_text_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personev" />
+</androidx.constraintlayout.widget.ConstraintLayout>

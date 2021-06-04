@@ -86,7 +86,7 @@ public class HomeActivity<pagecount> extends AppCompatActivity {
 
     private void openNewsActivity() {
 
-        Intent intent = new Intent(this,NewsActivity.class);
+        Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
 
     }
